@@ -4,7 +4,7 @@ from functools import reduce
 
 def get_input(file_name):
     with open(file_name, "r") as input_file:
-        return list([line.strip() for line in input_file.readlines()])
+        return [line.strip() for line in input_file.readlines()]
 
 
 def solve_first(inp, steps_right, steps_down):

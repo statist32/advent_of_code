@@ -1,6 +1,6 @@
 def get_input(file_name):
     with open(file_name, "r") as input_file:
-        return list([int(line) for line in input_file.readlines()])
+        return [int(line) for line in input_file.readlines()]
 
 
 def solve_day1_first(numbers, requested_sum):
