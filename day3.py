@@ -3,20 +3,18 @@ from functools import reduce
 
 
 def get_input(file_name):
-    with open(file_name, "r") as file:
-        return list([line.strip() for line in file.readlines()])
+    with open(file_name, "r") as input_file:
+        return list([line.strip() for line in input_file.readlines()])
 
 
 def solve_first(inp, steps_right, steps_down):
-    row = column = 0
+    row = column = tree_counter = 0
     last_row = len(inp) - 1
     row_length = len(inp[0])
-    tree_counter = 0
     while row < last_row:
         row += steps_down
         column = (column+steps_right) % row_length
         tree_counter += 1 if inp[row][column] == "#" else 0
-
     return tree_counter
 
 

@@ -2,15 +2,15 @@ from pprint import pprint
 
 
 def get_input(file_name):
-    with open(file_name, "r") as file:
-        # re would be prettier but I dont know that
-        return list([line.strip().replace(":", "").replace("-", " ").split(" ") for line in file.readlines()])
+    with open(file_name, "r") as input_file:
+        # re would be prettier
+        return [line.strip().replace(":", "").replace("-", " ").split(" ") for line in input_file.readlines()]
 
 
 def solve_first(passwords):
     amount_correct_passwords = 0
     for minimal_amount, maximal_amount, char, password in passwords:
-        occurrences = len(list(filter(lambda c: c == char, password)))
+        occurrences = len([c for c in password if c == char])
         if int(minimal_amount) <= occurrences <= int(maximal_amount):
             amount_correct_passwords += 1
     return amount_correct_passwords
