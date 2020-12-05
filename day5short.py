@@ -1,0 +1,2 @@
+from functools import reduce
+print(f"sol1={max(sorted([sum([2**(6-i) if c == 'B' else 0 for (i, c) in enumerate(card[:7])]) * 8 + sum([2**(2-i) if c == 'R' else 0 for (i, c) in enumerate(card[7:])]) for card in [line.strip() for line in open('day5_input.txt').readlines()]]))} sol2={reduce(lambda a, b: b if int(b)-int(a) == 1 else a, sorted([sum([2**(6-i) if c == 'B' else 0 for (i, c) in enumerate(card[:7])]) * 8 + sum([2**(2-i) if c == 'R' else 0 for (i, c) in enumerate(card[7:])]) for card in [line.strip() for line in open('day5_input.txt').readlines()]])) + 1}")
